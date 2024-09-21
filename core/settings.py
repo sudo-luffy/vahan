@@ -156,11 +156,11 @@ CELERY_TASK_MAX_RETRIES = ENV.int("CELERY_TASK_MAX_RETRIES", 5)
 
 # Email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'email-smtp.ap-south-1.amazonaws.com'  # Adjust for your SES region
+EMAIL_HOST = ENV.str("EMAIL_HOST")  # Adjust for your SES region
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'AKIAW3MD6KLES62XL2F6'  # Replace with your SES SMTP username
-EMAIL_HOST_PASSWORD = 'BG2Be0ee5U8/0LvibxTRLq1EDqHyok7LCRMgrsLZhA3w'  # Replace with your SES SMTP password        
+EMAIL_HOST_USER = ENV.str("EMAIL_HOST_USER", "test") # Replace with your SES SMTP username
+EMAIL_HOST_PASSWORD = ENV.str("EMAIL_HOST_PASSWORD")  # Replace with your SES SMTP password        
 
 
 # Default primary key field type

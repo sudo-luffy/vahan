@@ -15,7 +15,7 @@ services:
       gunicorn ashwa.wsgi:application --bind 0.0.0.0:8000
       '
     ports:
-      - "8000:8000"
+      - "8000:80"
     networks:
       - app-network
   
@@ -30,8 +30,8 @@ services:
       cd /app
       celery -A core worker -l INFO
       '
-    ports:
-      - "8000:80"
+    depends_on:
+      - web
     networks:
       - app-network
 
