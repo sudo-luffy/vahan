@@ -1,6 +1,6 @@
 services:
   web:
-    image: python:3.7
+    image: python:3.9
     volumes:
       - .:/app
     environment:
@@ -20,7 +20,7 @@ services:
       - app-network
   
   celery:
-    image: python:3.7
+    image: python:3.9
     volumes:
       - .:/app
     environment:
