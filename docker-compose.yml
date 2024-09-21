@@ -28,6 +28,8 @@ services:
     command: |
       sh -c '
       cd /app
+      pip install --upgrade pip
+      pip install -r requirements.txt
       celery -A core worker -l INFO
       '
     depends_on:
