@@ -270,5 +270,5 @@ dist
 .pnp.*
 
 package-lock.json
-.csv
-.numbers
+*.csv
+*.numbers
