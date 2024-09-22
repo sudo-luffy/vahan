@@ -14,6 +14,7 @@ def process_csv_task(filename, email):
     for vehicle_id in vehicle_ids:
         data = fetch_vehicle_details(vehicle_id)
         if data:
+            print(data)
             vehicle_data.append(data)
 
     # Write the vehicle details to output CSV
