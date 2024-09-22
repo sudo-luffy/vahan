@@ -29,6 +29,7 @@ def process_csv_task(filename, email):
     )
     email_message.attach_file(new_file_path)
     email_message.send()
+    print("mail sent ....")
 
     # Cleanup: remove the original and processed files if needed
     os.remove(file_path)
