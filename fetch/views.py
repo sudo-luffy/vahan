@@ -17,6 +17,7 @@ def csv_upload_view(request):
             uploaded_file_url = fs.url(filename)
             
             # Trigger the Celery task
+            print(f"processing csv and sending email to {email}")
             process_csv_task.delay(filename, email)
             
             return HttpResponse(f'File uploaded successfully, processing will be sent to {email}')
