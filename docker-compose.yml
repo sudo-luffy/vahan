@@ -30,7 +30,7 @@ services:
       cd /app
       pip install --upgrade pip
       pip install -r requirements.txt
-      celery -A core worker -l DEBUG
+      celery -A core worker -l INFO
       '
     depends_on:
       - web
